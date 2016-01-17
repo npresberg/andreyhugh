@@ -279,6 +279,7 @@ p.lead{
 a{
 	text-decoration:none;
 	color:#6a6a6a;
+	cursor:pointer !important;
 }
 
 a:hover{
@@ -2039,6 +2040,10 @@ a:hover .de-icon.effect3{
 
 .photo-item:hover .layer.hover-animation.fade-out{
 	opacity: 0; 
+}
+
+img.fading {
+	opacity: 0.3;
 }
 
 /* ----------------------------------------------*/
