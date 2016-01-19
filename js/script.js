@@ -336,10 +336,13 @@ $(document).ready(function() {
 	// 07. COUNTDOWN
 	//===================================================================================
 	var theday = new Date();
-	theday = new Date(2015, 7, 12);
+	theday = new Date(2016, 3, 9);
+	$.countdown.setDefaults({
+		labels: ['Años', 'Meses', 'Semanas', 'Días', 'Horas', 'Minutos', 'Segundos'],
+		labels1: ['Año', 'Mes', 'Semana', 'Día', 'Hora', 'Minuto', 'Segundo'],
+		compactLabels: ['y', 'm', 'w', 'd']	
+	});
 	$('#countdown').countdown({until: theday, format: 'WDHMS'});
-	$('#countdown').countdown($.countdown.regionalOptions['custom-label']); 
-		 
 	$('#date-countdown').countdown({until: theday, format: 'WDHMS'});
 		 
 	// 08. MOBILE MENU

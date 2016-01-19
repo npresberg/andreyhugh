@@ -14,10 +14,10 @@
 		//DEFINE MAP OPTIONS
 		//=======================================================================================
   		var mapOptions = {
-    		zoom: 18,		
+    		zoom: 15,		
 			mapTypeId: google.maps.MapTypeId.ROADMAP,	
     		center: new google.maps.LatLng(-34.4777721, -58.5034085),
-			panControl: true,
+			 panControl: true,
   			zoomControl: true,
   			mapTypeControl: true,
   			//scaleControl: false,
@@ -53,72 +53,35 @@
 		
 		//ADD NEW MARKER WITH LABEL
 		//=======================================================================================
-		var marker1 = new MarkerWithLabel({
+
+    var markers = [];
+
+		markers.push( new MarkerWithLabel({
        		position: new google.maps.LatLng(-34.4777721, -58.5034085),
        		draggable: false,
        		raiseOnDrag: false,
        		icon: ' ',
        		map: map, 
-         	labelContent: '<div class="de-icon circle medium-size" style="background-color:#FFF; border:1px solid #f0394d"><i class="de-icon-heart" style="color:#f0394d"></i></div>',
+         	labelContent: '<div class="de-icon circle medium-size" style="background-color:#FFF; border:1px solid #f0394d"><i class="de-icon-bell" style="color:#f0394d"></i></div>',
        		labelAnchor: new google.maps.Point(29, 20),
        		labelClass: "labels" // the CSS class for the label
-     		});
-    
-		var marker2 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.046617, -77.030567),
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#6a6a6a"><i class="de-icon-taxi"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});
+     		}));
+
 			
-		var marker3 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-34.4667843, -58.51155),
+    markers.push( new MarkerWithLabel({
+       		position: new google.maps.LatLng(-34.4725169,-58.5136831),
        		draggable: false,
        		raiseOnDrag: false,
        		icon: ' ',
        		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#67a80e"><i class="de-icon-food"></i></div>',
+         	labelContent: '<div class="de-icon circle small-size" style="background-color:#f6700e"><i class="de-icon-heart"></i></div>',
        		labelAnchor: new google.maps.Point(0, 0),
        		labelClass: "labels" // the CSS class for the label
-     		});
+     		}));
+
+
 			
-		var marker4 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.046617, -77.030567),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#c89d1b"><i class="de-icon-coffee"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});
-			
-		var marker5 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.045857, -77.032538),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#f0394d"><i class="de-icon-basket"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});	
-		
-		var marker6 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.046053, -77.028732),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#f6700e"><i class="de-icon-paper-plane"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});	
-			
-		var marker7 = new MarkerWithLabel({
+    markers.push( new MarkerWithLabel({
        		position: new google.maps.LatLng(-34.4667843, -58.51155),
        		draggable: false,
        		raiseOnDrag: false,
@@ -127,18 +90,18 @@
          	labelContent: '<div class="de-icon circle small-size" style="background-color:#0d9a48"><i class="de-icon-tree"></i></div>',
        		labelAnchor: new google.maps.Point(0, 0),
        		labelClass: "labels" // the CSS class for the label
-     		});			
+     		}));			
     	//marker.setMap( map );
 		
 		
 		//INFO WINDOWS
 		//=======================================================================================
 		var contentString = '<div>'+
-		'WEDDING CEREMONY';
+		'CEREMONIA/CEREMONY';
       	'</div>';
 		
 		var contentString1 = '<div>'+
-		'WEDDING PARTY';
+		'FIESTA/PARTY';
       	'</div>';
 
  	 	var infowindow = new google.maps.InfoWindow({
@@ -153,13 +116,12 @@
 		
 		//OPEN INFO WINDOWS ON LOAD
 		//=======================================================================================
-  		infowindow.open(map,marker1);
+  		infowindow.open(map,markers[0]);
+      infowindow1.open(map,markers[1]);
 		
 		//ON CLICK MARKER, OPEN INFO WINDOWS
 		//=======================================================================================
-		google.maps.event.addListener(marker1, 'click', function() {
-  			infowindow.open(map,marker1);
-  		});
+	
 
 		//ON MARKER CLICK EVENTS
 		//=======================================================================================
@@ -183,12 +145,21 @@
 		
 		//ON BOUND EVENTS AND WINDOW RESIZE
 		//=======================================================================================
+
+    //var center = new google.maps.LatLng(-34.4725169, -58.51261655);
+    var center = new google.maps.LatLngBounds(markers[0].getPosition());
+    markers.forEach(function(m) {
+      center = center.extend(m.getPosition());
+    });
+    
+    map.panToBounds(center);
+
 		google.maps.event.addListener(map, 'bounds_changed', function() {  		
 			if (is_windowresize)
 			{
 				//map.setCenter(marker.getPosition());
 				window.setTimeout(function() {
-      				map.panTo(marker1.getPosition());
+      				map.panToBounds(center);
     			}, 500);
 			}
 			is_windowresize=false;

@@ -1575,6 +1575,13 @@ input[type=submit]:disabled, input[type=submit]:hover:disabled{
 	font-size:15px;
 }
 
+.text-ingles-blanco{
+	font-family: 'Arvo', serif;
+	font-style: italic;	
+	color:#FFF;
+	font-size:15px;
+}
+
 /* 07.2.11 Banner Text				 			 */
 /* ----------------------------------------------*/
 .banner-text{
@@ -2335,6 +2342,12 @@ img.fading {
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #cccccc;
 }
 
+span.form-font {
+	font-family: Oswald, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+}
+
 /*-----------------------------------------------*/
 /* 11.3 Input Group								 */
 /*-----------------------------------------------*/
@@ -2929,11 +2942,11 @@ h2#dont-miss-it-title{
 /* ----------------------------------------------*/
 /* 14.10 Gift Section							 */
 /* ----------------------------------------------*/
-#gift-section{
-	padding: 140px 0; 
-	background-color:#FFF
-}
 
+.glyphicon{
+	color:#FFF;
+	font-size:60px; 
+}
 /* ----------------------------------------------*/
 /* 14.11 RSVP Section							 */
 /* ----------------------------------------------*/
