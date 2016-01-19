@@ -3604,10 +3604,21 @@ p{
 /* 14.3 Our Story Section						 */
 /* ----------------------------------------------*/
 #our-story{
-	padding: 80px 0
+	padding: 100px 0
 }
 
 #end-of-story{
+	margin-top:50px;
+}
+
+/* ----------------------------------------------*/
+/* 14.3 Tips Section						 */
+/* ----------------------------------------------*/
+#our-story2{
+	padding: 80px 0
+}
+
+#end-of-story2{
 	margin-top:50px;
 }
 
