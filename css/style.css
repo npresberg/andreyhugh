@@ -2692,14 +2692,20 @@ footer .image-divider.fixed-height{
 /* ----------------------------------------------*/
 #invited{
 	font-family: 'Pacifico', cursive; 
-	font-size:36px; 
+	font-size:40px; 
 	margin-top:70px;
+}
+
+#invited-names{
+	font-family: 'Arvo', serif; 
+	font-size:20px; 
+	margin-top:5px;
 }
 
 #banner-date{
 	font-family: 'Oswald', sans-serif; 
 	letter-spacing:3px; 
-	font-size:30px;
+	font-size:50px;
 }
 
 /* ----------------------------------------------*/
@@ -2943,7 +2949,7 @@ h2#dont-miss-it-title{
 /* 14.10 Gift Section							 */
 /* ----------------------------------------------*/
 
-.glyphicon{
+.icono-regalo{
 	color:#FFF;
 	font-size:60px; 
 }
@@ -2952,6 +2958,11 @@ h2#dont-miss-it-title{
 /* ----------------------------------------------*/
 #rsvp-section{
 	padding: 140px 0
+}
+
+.icono-sobre{
+	color:#f0394d;
+	font-size:50px; 
 }
 
 
