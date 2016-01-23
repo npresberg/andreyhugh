@@ -1582,6 +1582,13 @@ input[type=submit]:disabled, input[type=submit]:hover:disabled{
 	font-size:15px;
 }
 
+.companion {
+	font-family: 'Arvo', serif;
+	font-size: 13px;
+	width: 380px;
+	padding-left: 5px !important;
+}
+
 /* 07.2.11 Banner Text				 			 */
 /* ----------------------------------------------*/
 .banner-text{
@@ -2342,7 +2349,7 @@ img.fading {
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #cccccc;
 }
 
-span.form-font {
+span.form-font, p.form-font {
 	font-family: Oswald, sans-serif;
 	font-size: 14px;
 	font-weight: normal;
@@ -2359,7 +2366,7 @@ span.form-font {
 /* 11.4 Label									 */
 /*-----------------------------------------------*/
 form label{
-	font-family: 'Oswald', sans-serif;
+	font-family: 'Arvo', serif;
 	font-size:14px;
 	font-weight:normal;
 }
@@ -2438,6 +2445,27 @@ form .btn-primary.active,
 	font-size:16px;
 	font-weight:bold;
 }
+
+.checkbox, .radio {
+	margin-left:20px;
+}
+
+
+.rsvp {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+	.rsvp label {
+		/* Comun a ambas cajitas */
+
+	}
+
+	.rsvp input:checked + label {
+		/* Solo afecta a la seleccionada */
+		background: #f0394d;
+		color:white;
+	}
 
 /*-----------------------------------------------*/
 /* 11.7 Select Option							 */
