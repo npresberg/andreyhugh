@@ -423,7 +423,17 @@ $(document).ready(function() {
 	// 11. RSVP
 	//==================================================================================
 	if ($("#rsvpform").length){
-		$("#rsvpform").ajaxrsvp();
+		$("#rsvpform").on('submit', function(e) {
+			//e.preventDefault();
+
+			$('#submitButton').val('ENVIANDO... / SUBMITTING...').blur();
+
+			setTimeout(function() {
+		 		$('#submitButton').val('ENVIADO / SUBMITTED');
+				$('#nav-bar').addClass('fadeOut');
+				$('html,body').animate({scrollTop:$('footer').offset().top}, 1000);
+			}, 1500);			
+		});
 	}
 	
 	// 11.1 Custom Checkbox
