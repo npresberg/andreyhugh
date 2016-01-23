@@ -2243,13 +2243,13 @@
 							<!-- hughyandrea@gmail.com -->
 						<div class="col-md-12 rsvp">
 							<p class="form-font">CONFIRMAS ASISTENCIA? / WILL YOU ATTEND?</p>
-							<input type="radio" name="attend" checked="checked" class="hidden" id="attend-yes" />
+							<input type="radio" name="attend" checked="checked" class="hidden" id="attend-yes" value="yes" />
 							<label for="attend-yes" class="btn btn-lg btn-default">
 								<i class="de-icon-smile"></i>
 								Si / Yes
 							</label>
 
-							<input type="radio" name="attend" class="hidden" id="attend-no" />
+							<input type="radio" name="attend" class="hidden" id="attend-no" value="no" />
 							<label for="attend-no" class="btn btn-lg btn-default">
 								<i class="de-icon-frown"></i>
 								No
@@ -2259,10 +2259,10 @@
 
 						<div class="col-md-6">
 							<div id="fullname" class="form-group">
-								<input type="text" class="form-control ajax-input" id="inputname" placeholder="*NOMBRE/NAME" data-required="Name Required" data-output-label="Output Name">
+								<input type="text" class="form-control ajax-input" name="name" placeholder="*NOMBRE/NAME" data-required="Name Required" data-output-label="Output Name">
 							</div>
 							<div id="email" class="form-group">
-								<input type="email" class="form-control ajax-input" id="inputemail" placeholder="*EMAIL" data-required="Email Required" data-output-label="Output Email">
+								<input type="email" class="form-control ajax-input" name="email" placeholder="*EMAIL" data-required="Email Required" data-output-label="Output Email">
 							</div>
 							<div class="form-group">
 								<div class="de-icon circle small-size inline" style="background-color:#f0394d;margin:0 2px 0 0">
@@ -2272,15 +2272,15 @@
 
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" class="ajax-input" id="celiaco" />
+										<input type="checkbox" class="ajax-input" name="food[glutten-free]" />
 										CUALQUIER COSA RICA PARA CELÍACOS / GLUTTEN-FREE
 									</label><br>
 									<label>
-										<input type="checkbox" class="ajax-input" id="celiaco" />
+										<input type="checkbox" class="ajax-input" name="food[vegetarian]" />
 										CUALQUIER COSA RICA PARA VEGETARIANOS / VEGETARIAN FOOD
 									</label><br>
 									<label>
-										<input type="checkbox" class="ajax-input" id="celiaco" />
+										<input type="checkbox" class="ajax-input" id="food[kosher]" />
 										CUALQUIER COSA RICA KOSHER / KOSHER FOOD
 									</label>
 								</div>
@@ -2294,16 +2294,16 @@
 
 								<div class="radio">
 									<label>
-										<input type="radio" class="ajax-input" name="companion" />
+										<input type="radio" class="ajax-input" name="companion" value="yes" />
 										SI / YES
 									</label>
 									&nbsp;
 									<label>
-										<input type="radio" checked="checked" class="ajax-input" name="companion" />
+										<input type="radio" checked="checked" class="ajax-input" name="companion" value="no" />
 										NO
 									</label>
 									<label class="companion">
-										<input type="text" class="form-control ajax-input" id="inputname" placeholder="CUÁL ES SU NOMBRE?/WHAT IS HIS/HER NAME?" data-required="Name Required" data-output-label="Output Name">
+										<input type="text" class="form-control ajax-input" name="companion-name" placeholder="CUÁL ES SU NOMBRE?/WHAT IS HIS/HER NAME?" data-required="Name Required" data-output-label="Output Name">
 									</label>  
 								</div>
 
@@ -2311,12 +2311,12 @@
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<textarea id="inputmessage" placeholder="DEJÁ TU MENSAJE/LEAVE YOUR MESSAGE" class="form-control ajax-input" rows="14" data-output-label="Output Message"></textarea>
+								<textarea name="message" placeholder="DEJÁ TU MENSAJE/LEAVE YOUR MESSAGE" class="form-control ajax-input" rows="14" data-output-label="Output Message"></textarea>
 							</div> 
 						</div>
 						<div class="col-md-12 text-center">
 							<div class="form-group">
-								<input type="submit" id="submitButton"  name="submitButton" class="button medium reverse" value="ENVIAR/SUBMIT">
+								<input type="submit" id="submitButton"  class="button medium reverse" value="ENVIAR/SUBMIT">
 							</div> 
 						</div>
 					</form>
@@ -2416,7 +2416,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerwithlabel/src/markerwithlabel.js"></script>
 		<!-- RSVP -->
-		<script src="js/rsvp/rsvp.js"></script>
+		<!-- <script src="js/rsvp/rsvp.js"></script> -->
 		
 		<!-- Custom Core Script -->
 		<script type="text/javascript" src="js/script.js"></script>        
