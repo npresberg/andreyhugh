@@ -108,13 +108,13 @@
 		
 		//INFO WINDOWS
 		//=======================================================================================
-/*
+
  	 	var infowindow = new google.maps.InfoWindow({
-      		content: contentString
+      		content: '<div>CEREMONIA/CEREMONY</div>'
   		});
 		
 		var infowindow1 = new google.maps.InfoWindow({
-      		content: contentString1
+      		content: '<div>FIESTA/PARTY</div>'
   		});
 		
 		
@@ -123,7 +123,7 @@
 		//=======================================================================================
   		infowindow.open(map,markers[0]);
       infowindow1.open(map,markers[1]);
-	*/	
+		
 		//ON CLICK MARKER, OPEN INFO WINDOWS
 		//=======================================================================================
 	
